@@ -41,8 +41,23 @@ function App() {
         <p>2월 3일 발행</p>
         <hr/>
       </div>
+      
+      <Modal />
+
     </div>
   );
+}
+
+function Modal() {
+  return (
+    <div className='modal'>
+    <h2>Component</h2>
+    <p>반복출현하는 HTML 덩어리</p>
+    <p>자주 변경되는 HTML UI들</p>
+    <p>다른 페이지 만들때</p>
+    <p>state쓸 때 복잡해짐</p>
+  </div>
+  )
 }
 
 export default App;
