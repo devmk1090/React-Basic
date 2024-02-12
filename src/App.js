@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import Hello from './component/Hello';
 import Welcome from './component/Welcome';
+import styles from "./App.module.css";
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <Hello />
-      <Welcome />
+      <div className={styles.box}>App</div>
       <div className='black-nav'>
         <div>React Basic</div>
       </div>
