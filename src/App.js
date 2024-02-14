@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Hello from './component/Hello';
-import Welcome from './component/Welcome';
-import styles from "./App.module.css";
 
 function App() {
 
@@ -25,8 +23,12 @@ function App() {
 
   return (
     <div className="App">
-      <Hello />
-      <div className={styles.box}>App</div>
+
+      <h3>props : properties</h3>
+      <Hello age={10}/>
+      <Hello age={20}/>
+      <Hello age={30}/>
+
       <div className='black-nav'>
         <div>React Basic</div>
       </div>
