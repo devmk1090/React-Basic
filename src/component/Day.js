@@ -1,10 +1,11 @@
 import dummy from "../db/data.json";
+import { useParams } from "react-router-dom";
 
 export default function Day() {
-    //dummy.words
-    const day = 2;
+    
+    const { day } = useParams();
     const wordList = dummy.words.filter(word => (
-        word.day === day
+        word.day === Number(day)
     ))
     return (
         <>

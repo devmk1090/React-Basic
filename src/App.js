@@ -3,18 +3,21 @@ import DayList from "./component/DayList";
 import Header from "./component/Header";
 import Day from "./component/Day";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import EmptyPage from "./component/EmptyPage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
+    <div className="App">
+      <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<DayList></DayList>} />
-          <Route path="/day" element={<Day />} />
+          <Route path="/day/:day" element={<Day />} />
+          <Route path="*" element={<EmptyPage />} />
         </Routes>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
+
   )
 }
 
