@@ -1,16 +1,33 @@
+import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import useFetch from "../hooks/useFetch";
 
 export default function CreateWorld() {
 
     const days = useFetch("http://localhost:3001/days");
+    const navigate = useNavigate();
 
     function onSubmit(e) {
         e.preventDefault();
 
-        console.log(engRef.current.value)
-        console.log(korRef.current.value)
-        console.log(dayRef.current.value)
+        fetch(`http://localhost:3001/words/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json',
+            },
+            body: JSON.stringify({
+                day: dayRef.current.value,
+                eng: engRef.current.value,
+                kor: korRef.current.value,
+                isDone: false,
+            }),
+        })
+        .then(res => {
+            if(res.ok) {
+                alert("생성이 완료 되었습니다")
+                navigate(`/day/${dayRef.current.value}`)
+            }
+        });
     }
 
     const engRef = useRef(null)
