@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 import useFetch from "../hooks/useFetch";
-import React from "react";
 import { IDay } from "./DayList";
 
 export default function CreateWorld() {
