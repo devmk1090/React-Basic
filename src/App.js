@@ -7,8 +7,18 @@ import CreateWord from "./component/CreateWord";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import EmptyPage from "./component/EmptyPage";
 import CreateDay from "./component/CreateDay";
+import { useEffect, useState } from "react";
 
 function App() {
+
+  //android > javascript
+  const helloWold = () => {
+    console.log("Hello World")
+  }
+
+  //javascript > android
+  window.callShowToast.showToast("Hello World")
+
   return (
     <div className="App">
       <BrowserRouter>
